@@ -21,7 +21,7 @@ module.exports = withBundleAnalyzer({
   }
 })
 
-const isProd? = process.env.NODE_ENV='production';
+// const isProd? = process.env.NODE_ENV='production';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -30,7 +30,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
-  basePath: isProd? "/nexttest":'';
+  basePath: "/nexttest",
   output: "export",
   distDir: "dist",
   /**
