@@ -20,6 +20,9 @@ module.exports = withBundleAnalyzer({
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   }
 })
+
+const isProd? = process.env.NODE_ENV='production';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /**
@@ -27,6 +30,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
+  basePath: isProd? "/nexttest":'';
   output: "export",
   distDir: "dist",
   /**
