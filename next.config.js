@@ -32,7 +32,7 @@ const nextConfig = {
    */
   // basePath: isProd ? "/nexttest":'',
   output: "export",
-  distDir: "out",
+  distDir: "dist",
   assetPrefix: process.env.ASSET_PREFIX,
   basePath: process.env.BASE_PATH,
   /**
