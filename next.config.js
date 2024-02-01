@@ -1,25 +1,25 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-// const withBundleAnalyzer = require('@next/bundle-analyzer')({
-//   enabled: process.env.ANALYZE === 'true'
-// })
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
 
-// module.exports = withBundleAnalyzer({
-//   staticPageGenerationTimeout: 300,
-//   images: {
-//     domains: [
-//       'www.notion.so',
-//       'notion.so',
-//       'images.unsplash.com',
-//       'pbs.twimg.com',
-//       'abs.twimg.com',
-//       's3.us-west-2.amazonaws.com',
-//       'transitivebullsh.it'
-//     ],
-//     formats: ['image/avif', 'image/webp'],
-//     dangerouslyAllowSVG: true,
-//     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
-//   }
-// })
+module.exports = withBundleAnalyzer({
+  staticPageGenerationTimeout: 300,
+  images: {
+    domains: [
+      'www.notion.so',
+      'notion.so',
+      'images.unsplash.com',
+      'pbs.twimg.com',
+      'abs.twimg.com',
+      's3.us-west-2.amazonaws.com',
+      'transitivebullsh.it'
+    ],
+    formats: ['image/avif', 'image/webp'],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+  }
+})
 
 const isProd = process.env.NODE_ENV==='production';
 
@@ -30,8 +30,11 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
+  // basePath: isProd ? "/nexttest":'',
   output: "export",
-
+  distDir: "out",
+  assetPrefix: process.env.ASSET_PREFIX,
+  basePath: process.env.BASE_PATH,
   /**
    * Set base path. This is the slug of your GitHub repository.
    *
