@@ -30,7 +30,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
-  basePath: isProd ? "/nexttest":'',
+  // basePath: isProd ? "/nexttest":'',
   output: "export",
   distDir: "dist",
   /**
