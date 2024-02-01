@@ -12,10 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          version: 8
-          run_install: true
+          node-version: "20"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Set Environment Variables
         env:
           BASE_PATH: /react-texteditor-example
