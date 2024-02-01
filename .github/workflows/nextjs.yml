@@ -82,7 +82,7 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Create .nojekyll
-        run: touch ./out/.nojekyll
+        run: touch .nojekyll
       # - name: Static HTML export with Next.js
         # run: ${{ steps.detect-package-manager.outputs.runner }} next export
       # - name: Upload artifact
