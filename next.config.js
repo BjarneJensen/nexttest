@@ -32,7 +32,9 @@ const nextConfig = {
    */
   // basePath: isProd ? "/nexttest":'',
   output: "export",
-  distDir: "dist",
+  //distDir: "dist",
+  assetPrefix: process.env.ASSET_PREFIX,
+  basePath: process.env.BASE_PATH,
   /**
    * Set base path. This is the slug of your GitHub repository.
    *
