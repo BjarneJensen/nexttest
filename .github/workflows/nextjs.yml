@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+          run_install: true
       - name: Set Environment Variables
         env:
           BASE_PATH: /react-texteditor-example
